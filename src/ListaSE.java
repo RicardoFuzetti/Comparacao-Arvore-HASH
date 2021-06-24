@@ -15,8 +15,7 @@ public class ListaSE {
     }
 
     public NoSE getP(){
-        NoSE p = this.primeiro;
-        return p;
+        return this.primeiro;
     }
 
     public void setP(NoSE n){
@@ -74,19 +73,15 @@ public class ListaSE {
         tamanho++;
     }
 
-
-
-
     public boolean buscaLista(int elemento){
         if (vazia()) {
             System.out.println("Lista está vazia!!!");
             return false;
-        } else {
-            while (getP().dado != elemento){
-                setP(getP().proximo);
-            }
+        } else if (getP().dado != elemento) {
+            setP(getP().proximo);
             return true;
         }
+        return true;
     }
 
 

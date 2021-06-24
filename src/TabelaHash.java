@@ -26,15 +26,13 @@ public class TabelaHash {
     }
 
     public ListaSE retornaPrimeiro() {
-        ListaSE lista = new ListaSE();
-        return lista;
+        return new ListaSE();
     }
 
     public void insere(int elemento, int tamanho) {
         int posicao = funcaoHash(elemento, tamanho);
         if (tabelaHash [posicao] != null){
-            if (tabelaHash[posicao].buscaLista(elemento) && retornaPrimeiro().getP() == null) { //REFERENCIA ESTATICA?
-                NoSE no = new NoSE(elemento);
+            if (tabelaHash[posicao].getP() == null) { //REFERENCIA ESTATICA?
                 tabelaHash[posicao].insereUltimo(elemento);
                 // Não estamos conseguindo alocar o primeiro elemento da ListaSE na posição da tabelaHash
             } else if (tabelaHash[posicao].buscaLista(elemento)) {
@@ -62,13 +60,14 @@ public class TabelaHash {
         }
     }
 
-    public void imprime() {
+    public void imprimeHash() {
         for (int i=0; i<tamanho; i++) {
             String imprime = "\n HASH[";
             if(i<10) {
                 System.out.print(imprime + "0" + i + "] -> ");
             }else {
                 System.out.print(imprime + i + "] -> ");
+
             }if (tabelaHash[i].primeiro != null) {
                 tabelaHash[i].imprime();
             }

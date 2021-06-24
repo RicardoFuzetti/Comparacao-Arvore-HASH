@@ -55,7 +55,7 @@ public class Main {
 
         //Cálculo de tempo de impressão
         long inicioTempoExecucaoImpressaoTabela = System.nanoTime();
-        tabelaHash.imprime();
+        tabelaHash.imprimeHash();
         long fimTempoExecucaoImpressaoTabela = System.nanoTime();
         long tempoExecucaoImpressaoTabela = fimTempoExecucaoImpressaoTabela - inicioTempoExecucaoImpressaoTabela;
         double secondsImpressaoHash = (double) tempoExecucaoImpressaoTabela / 1000000000;
